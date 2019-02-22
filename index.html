@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="js/jquery.js"></script>
+    <title>App Transporte</title>
+</head>
+
+<body>
+    <div class="menu">
+        <input type="checkbox" id="check" />
+        <label id="icone" for="check"><img src="../www/img/icone.png" /></label>
+        <div class="barra">
+            <nav>
+                <a href="">
+                    <div class="link">Perfil</div>
+                </a>
+                <a href="">
+                    <div class="link">Configurações</div>
+                </a>
+                <a href="">
+                    <div class="link">Sobre</div>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <div id="mainPage" class="page">
+        <div id="foto">foto</div>
+        <div id="perfil">
+            <p id="pperfil" class="targetPage" dt-page="#page1">Perfil</p>
+        </div>
+        <div id="infos">
+            <p>Total de viagens:</p>
+            <p>Km percorridos:</p>
+        </div>
+    </div>
+    <div id="page1" class="page page-active">
+        <div id="sPerfil">
+            <p>Seu Perfil</p>
+        </div>
+        <div id="foto2">ft</div>
+        <p id="editar">Editar</p>
+        <div id="form">
+            <form>
+                <input type="text" name="nome" id="cnome" placeholder="• Nome">
+                <input type="text" name="sobre" id="csobre" placeholder="• Sobrenome">
+                <input type="text" name="nascimento" id="cnascimento" placeholder="• Data de nasc.">
+                <input type="text" name="end" id="cend" placeholder="• Endereço">
+                <input type="text" name="cpf" id="ccpf" placeholder="• CPF">
+                <input type="text" name="cnh" id="ccnh" placeholder="• CNH">
+                <input type="text" name="placa" id="cplaca" placeholder="• Placa do veículo">
+            </form>
+        </div>
+        <div id="buttonConfirma">
+            <button id="confirmar" class="targetPage" dt-page="#page2">✔</button>
+        </div>
+    </div>
+    <div id="page2" class="page">
+        <div id="infos2">
+            <p><strong>Nova corrida de:</strong></p>
+            <p>Local:</p>
+            <p>Km</p>
+            <p>Kg</p>
+            <p>Caixas</p>
+            <p>Tratar com:</p>
+        </div>
+        <div id="mapa">
+            <p>Ver no mapa</p>
+        </div>
+        <div id="sobre">
+            <p class="targetPage" dt-page="#page5">Sobre o cliente</p>
+        </div>
+        <div id="buttonCancelConfirm">
+            <button type="button" id="cancel" class="targetPage" dt-page="#mainPage">X</button>
+            <button type="button" id="confirm" class="targetPage" dt-page="#page3">✔</button>
+        </div>
+    </div>
+    <div id="page3" class="page">
+        <div id="viagem">
+            <p>Km</p>
+            <p>00h 00min</p>
+        </div>
+        <div id="aceitar">
+            <p>Aceitar?</p>
+        </div>
+        <div id="buttonCancelConfirm">
+            <button type="button" id="cancel" class="targetPage" dt-page="#mainPage">X</button>
+            <button type="button" id="confirm" class="targetPage" dt-page="#page4">✔</button>
+        </div>
+    </div>
+    <div id="page4" class="page">
+        <div id="viagem2">
+            <p>Km</p>
+            <p>00h 00min</p>
+        </div>
+        <div id="atencao">
+            <p>Mantenha sempre a atenção na estrada</p>
+        </div>
+    </div>
+    <div id="page5" class="page">
+        <div id="cliente">
+            <p>Seu cliente</p>
+        </div>
+        <div id="foto3">
+            ft
+        </div>
+        <div id="infos3">
+            <p>Nome</p>
+            <p>Sobrenome</p>
+            <p>Endereço</p>
+        </div>
+        <div id="buttonConfirma">
+            <button type="button" id="confirmar" class="targetPage" dt-page="#page6">✔</button>
+        </div>
+    </div>
+    <div id="page6" class="page">
+        <div id="local">
+            <p>Local:</p>
+            <p>Carga:</p>
+        </div>
+        <div id="foto4">
+            foto
+        </div>
+        <div id="infos4">
+            <p>As informações conferem com o cliente?</p>
+        </div>
+        <div id="buttonCancelConfirm">
+            <button type="button" id="cancel" class="targetPage" dt-page="#mainPage">X</button>
+            <button type="button" id="confirm" class="targetPage" dt-page="#page7">✔</button>
+        </div>
+    </div>
+    <div id="page7" class="page">
+        <div id="chegou">
+            <p>Você chegou ao seu destino.</p>
+        </div>
+        <div id="tempo">
+            <p>Tempo: 00h 00min 00s</p>
+        </div>
+        <div id="buttonConfirma">
+            <button type="button" id="confirmar" class="targetPage" dt-page="#mainPage">✔</button>
+        </div>
+    </div>
+</body>
+<script>
+    function ativaPage() {
+    $('.targetPage').click(function() {
+        let target = $(this).attr('dt-page');
+        $('.page').removeClass('page-active');
+        $(target).addClass('page-active');
+    })
+}
+ativaPage();
+</script>
+</html>
